@@ -12,7 +12,7 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
         options: {
           client: {
             clientId: 'jung-server-1',
-            brokers: ['localhost:9092'],
+            brokers: ['localhost:29092'],
           },
           consumer: {
             groupId: 'jung-group-0',

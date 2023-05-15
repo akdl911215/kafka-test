@@ -4,12 +4,6 @@ import { MicroserviceOptions, Transport } from '@nestjs/microservices';
 import { Partitioners, Kafka } from 'kafkajs';
 
 async function bootstrap() {
-  // const kafka = new Kafka({
-  //   brokers: ['localhost:9092'],
-  //   clientId: 'my-app',
-  // });
-  // kafka.producer({ createPartitioner: Partitioners.LegacyPartitioner });
-
   // 마이크로서비스 추가
   const app = await NestFactory.createMicroservice<MicroserviceOptions>(
     AppModule,
@@ -17,12 +11,12 @@ async function bootstrap() {
       transport: Transport.KAFKA,
       options: {
         client: {
-          brokers: ['localhost:9092'],
+          brokers: ['localhost:29092'],
         },
 
-        consumer: {
-          groupId: 'jung-group-0',
-        },
+        // consumer: {
+        //   groupId: 'jung-group-0',
+        // },
       },
     },
   );
